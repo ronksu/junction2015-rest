@@ -4,8 +4,10 @@ var sequelize = new Sequelize("sqlite://db.sqlite");
 var models = [
     'Badge',
     'Person',
-    'PersonBadge'
+    'PersonBadge',
+    'Activity'
 ];
+
 models.forEach(function(model) {
     module.exports[model] = sequelize.import(__dirname + '/' + model);
 });
@@ -14,6 +16,7 @@ models.forEach(function(model) {
 (function(m) {
     m.Badge.belongsToMany(m.Person, { through: m.PersonBadge });
     m.Person.belongsToMany(m.Badge, { through: m.PersonBadge });
+    m.Activity.belongsTo(m.Person);
 })(module.exports);
 
 // Export connection

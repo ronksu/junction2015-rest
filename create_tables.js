@@ -3,7 +3,8 @@ require('./models')
 var model_names = [
     'Badge',
     'Person',
-    'PersonBadge'
+    'PersonBadge',
+    'Activity',
 ];
 
 
