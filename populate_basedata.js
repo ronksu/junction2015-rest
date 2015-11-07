@@ -42,7 +42,7 @@ var badges = [
     {
         'name': 'Fleet Explorer',
         'icon': null,
-        'description': '',
+        'description': 'Try out every plane within Finnair or partner airlines',
         'unique_string': null,
         'count_int': null,
         'threshold_int': null,
@@ -51,7 +51,7 @@ var badges = [
     {
         'name': 'Continent Hopper',
         'icon': null,
-        'description': '',
+        'description': 'Visit all continents within Finnair or partner airlines',
         'unique_string': null,
         'count_int': null,
         'threshold_int': null,
@@ -60,7 +60,7 @@ var badges = [
     {
         'name': 'Airport Hog',
         'icon': null,
-        'description': '',
+        'description': 'Visit N airports within Finnair or partner airlines',
         'unique_string': null,
         'count_int': null,
         'threshold_int': null,
@@ -69,7 +69,7 @@ var badges = [
     {
         'name': 'Cool Commuter',
         'icon': null,
-        'description': '',
+        'description': 'Fly the same route within Finnair or partner airlines N times',
         'unique_string': null,
         'count_int': null,
         'threshold_int': null,
@@ -78,7 +78,7 @@ var badges = [
     {
         'name': 'Foodie',
         'icon': null,
-        'description': '',
+        'description': 'Pre-order food',
         'unique_string': null,
         'count_int': null,
         'threshold_int': null,
@@ -87,7 +87,7 @@ var badges = [
     {
         'name': 'Mile Champion',
         'icon': null,
-        'description': '',
+        'description': 'Fly N miles',
         'unique_string': null,
         'count_int': null,
         'threshold_int': null,
@@ -96,7 +96,7 @@ var badges = [
     {
         'name': 'Transfer Guru',
         'icon': null,
-        'description': '',
+        'description': 'Transfer N times',
         'unique_string': null,
         'count_int': null,
         'threshold_int': null,
@@ -105,7 +105,7 @@ var badges = [
     {
         'name': 'Socialite',
         'icon': null,
-        'description': '',
+        'description': 'Tag #finnair or #finnavia N times',
         'unique_string': null,
         'count_int': null,
         'threshold_int': null,
@@ -114,7 +114,7 @@ var badges = [
     {
         'name': 'Movie Marathoner',
         'icon': null,
-        'description': '',
+        'description': 'Watch N movies on the plane',
         'unique_string': null,
         'count_int': null,
         'threshold_int': null,
@@ -123,7 +123,7 @@ var badges = [
     {
         'name': 'Tough Traveller',
         'icon': null,
-        'description': '',
+        'description': 'Take longest Finnair flight',
         'unique_string': null,
         'count_int': null,
         'threshold_int': null,
@@ -132,7 +132,7 @@ var badges = [
     {
         'name': 'Light Packer',
         'icon': null,
-        'description': '',
+        'description': 'Bring half of check-in luggage',
         'unique_string': null,
         'count_int': null,
         'threshold_int': null,
@@ -141,7 +141,7 @@ var badges = [
     {
         'name': 'Sauna Lover',
         'icon': null,
-        'description': '',
+        'description': 'Take sauna at Helsinki airport N times',
         'unique_string': null,
         'count_int': null,
         'threshold_int': null,
@@ -151,3 +151,8 @@ var badges = [
 badges.forEach(function (badge) {
     Badge.create(badge);
 });
+/*
+Person.findById('680297272').then(function(person) {
+    person.
+});
+*/
