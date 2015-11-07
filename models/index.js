@@ -10,14 +10,11 @@ models.forEach(function(model) {
     module.exports[model] = sequelize.import(__dirname + '/' + model);
 });
 
-// describe relationships
-/*
+// Describe relationships
 (function(m) {
-    m.PhoneNumber.belongsTo(m.User);
-    m.Task.belongsTo(m.User);
-    m.User.hasMany(m.Task);
-    m.User.hasMany(m.PhoneNumber);
+    m.Badge.belongsToMany(m.Person, { through: m.PersonBadge });
+    m.Person.belongsToMany(m.Badge, { through: m.PersonBadge });
 })(module.exports);
-*/
-// export connection
+
+// Export connection
 module.exports.sequelize = sequelize;
