@@ -5,7 +5,8 @@ var models = [
     'Badge',
     'Person',
     'PersonBadge',
-    'Activity'
+    'Activity',
+    'PersonActivity'
 ];
 
 models.forEach(function(model) {
@@ -16,7 +17,12 @@ models.forEach(function(model) {
 (function(m) {
     m.Badge.belongsToMany(m.Person, { through: m.PersonBadge });
     m.Person.belongsToMany(m.Badge, { through: m.PersonBadge });
-    m.Activity.belongsTo(m.Person);
+
+    m.Activity.belongsToMany(m.Person, { through: m.PersonActivity });
+    m.Person.belongsToMany(m.Activity, { through: m.PersonActivity });
+
+    m.Activity.hasMany(m.Badge);
+
 })(module.exports);
 
 // Export connection
