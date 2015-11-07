@@ -4,7 +4,7 @@ var sequelize = new Sequelize("sqlite://db.sqlite");
 var models = [
     'Badge',
     'Person',
-    /*'PersonBadge'*/
+    'PersonBadge'
 ];
 models.forEach(function(model) {
     module.exports[model] = sequelize.import(__dirname + '/' + model);

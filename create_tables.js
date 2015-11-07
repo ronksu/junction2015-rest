@@ -1,6 +1,16 @@
-var Sequelize = require('sequelize');
-var sequelize = new Sequelize("sqlite://db.sqlite");
+require('./models')
 
-var Badge = sequelize.import(__dirname + "/models/badge");
-Badge.sync();
+var model_names = [
+    'Badge',
+    'Person',
+    'PersonBadge'
+];
 
+
+var models = require('./models');
+var User = models.User;
+
+model_names.forEach(function(model_name) {
+    var Model = models[model_name];
+    Model.sync();
+});
