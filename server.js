@@ -1,16 +1,14 @@
 var express = require('express');
 var app = express();
 
-var Sequelize = require('sequelize');
-var sequelize = new Sequelize("sqlite://db.sqlite");
-
+app.set('models', require('./models'));
 
 app.get('/', function(req, res) {
     res.send("Badge Hunt API v0.1");
 });
 
 app.get('/badges', function(req, res) {
-    var Badge = sequelize.import(__dirname + "/models/badge");
+    var Badge = app.get('models').Badge;
 
     Badge.findAll().then(function(badges) {
         console.log(badges);
