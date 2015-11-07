@@ -5,11 +5,11 @@ var model_names = [
     'Person',
     'PersonBadge',
     'Activity',
+    'PersonActivity'
 ];
 
 
 var models = require('./models');
-var User = models.User;
 
 model_names.forEach(function(model_name) {
     var Model = models[model_name];
