@@ -1,25 +1,26 @@
 var express = require('express');
 var app = express();
 
+var Sequelize = require('sequelize');
+var sequelize = new Sequelize("sqlite://db.sqlite");
+
+
 app.get('/', function(req, res) {
     res.send("Badge Hunt API v0.1");
 });
 
 app.get('/badges', function(req, res) {
-    res.send([
-        {
-            'name':'SuperAwesomeBadge1',
-            'icon':"a.bad.url"
-        },
-        {
-            'name':'SuperAwesomeBadge2',
-            'icon':"a.bad.url2"
-        },
-    ]);
+    var Badge = sequelize.import(__dirname + "/models/badge");
+
+    Badge.findAll().then(function(badges) {
+        console.log(badges);
+        res.send(badges);
+    });
 
 });
 
 app.get('/badges/:id', function(req, res) {
+
     res.send({
         'id': req.params.id,
         'name': 'SuperAwesomeBadge1',
@@ -35,4 +36,4 @@ app.get('/badges/:id', function(req, res) {
 
 var server = app.listen(8080, '0.0.0.0', function() {
     console.log("Hit me, I am listening at localhost:8080.");
-})
+});
