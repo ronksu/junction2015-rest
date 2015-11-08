@@ -27,6 +27,22 @@ app.get('/badges/:id', function(req, res) {
 
 });
 
+
+app.get('/person/:personid', function(req, res) {
+    var Person = app.get('models').Person;
+
+    Person.findById(req.params.personid).then(function(person) {
+        person.getBadges().then(function(associatedBadges) {
+            res.send({
+                'person': person,
+                'badges':associatedBadges
+            });
+        });
+    });
+
+});
+
+
 var server = app.listen(8080, '0.0.0.0', function() {
     console.log("Hit me, I am listening at localhost:8080.");
 });
